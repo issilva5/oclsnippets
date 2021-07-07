@@ -1,0 +1,21 @@
+{
+    "name": "oclsnippets",
+    "displayName": "OCLSnippets",
+    "description": "Implements the main OCL rules as snippets",
+    "publisher": "issilva5",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.57.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "ocl",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

@@ -1,0 +1,107 @@
+{
+
+	"Derivated attribute" : {
+		"prefix": "derive",
+		"scope": "ocl",
+		"body": [
+			"context ${1:class}::${2:attribute} : ${3:type}",
+			"derive: ${4:expression}"
+		]
+	},
+
+	"Init attribute" : {
+		"prefix": "init",
+		"scope": "ocl",
+		"body": [
+			"context ${1:class}::${2:attribute}",
+			"init: ${3:value}"
+		]
+	},
+
+	"Invariant declaration" : {
+		"prefix": "inv",
+		"scope": "ocl",
+		"body": [
+			"context ${1:[var]} : ${2:class} inv ${3:[name_inv]}:",
+			"${4:expression}"
+		]
+	},
+
+	"Operation body" : {
+		"prefix": "query",
+		"scope": "ocl",
+		"body": [
+			"context ${1:class}:${2:operation}:${3:return_type}:",
+			"body: ${4:expression}"
+		]
+	},
+
+	"Pre and post conditions" : {
+		"prefix": "prepost",
+		"scope": "ocl",
+		"body": [
+			"context ${1:class}:${2:operation} : ${3:return_type}:",
+			"pre: ${4:expression}",
+			"post: ${5:expression}"
+		]
+	},
+
+	"Basic Types" : {
+		"prefix": "btype",
+		"scope": "ocl",
+		"body": [
+			"${1|Integer,Real,String,Boolean,UnlimitedNatural,Tuple(name : type),OclAny,OclVoid|}",
+		]
+	},
+
+	"Collection Types" : {
+		"prefix": "col",
+		"scope": "ocl",
+		"body": [
+			"${1|Collection,Bag,Sequence,Set,OrderedSet|}",
+		]
+	},
+
+	"Collection Operations" : {
+		"prefix": "->",
+		"scope": "ocl",
+		"body": [
+			"->${1|size(),count(object),includes(object),includesAll(collection),excludes(object),excludesAll(collection),isEmpty(),including(object),excluding(object)|}",
+		]
+	},
+
+	"Iterate" : {
+		"prefix": "->iter",
+		"scope": "ocl",
+		"body": [
+			"->${2|select,reject,collect,forAll,exists,iterate|}(${3:[element]} : ${4:[type]} | ${5:expression})",
+		]
+	},
+
+	"If-then-else" : {
+		"prefix": "if",
+		"scope": "ocl",
+		"body": [
+			"if ${1:condition}",
+			"   then ${2:if_body}",
+			"   else ${3:else_body}",
+			"endif"
+		]
+	},
+
+	"Local variable declaration" : {
+		"prefix": "let",
+		"scope": "ocl",
+		"body": [
+			"let ${1:var_name} : ${2:var_type} = ${3:var_value} in"
+		]
+	},
+
+	"Attribute or method definition" : {
+		"prefix": "def",
+		"scope": "ocl",
+		"body": [
+			"${1|def,static def|}: ${2:name} : ${3:type} = ${4:value}"
+		]
+	},
+}
